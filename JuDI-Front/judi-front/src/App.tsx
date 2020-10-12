@@ -1,11 +1,17 @@
-import React from 'react';
+import * as React from "react";
+import MainPage from "./Pages/MainPage";
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
-function App() {
-  return (
-    <div>
-      Hello Reza!!
-    </div>
-  );
-}
+const App: React.FC = () => {
+    return (
+        <div className="App">
+            <Router>
+                <Switch>
+                    <Route exact path="/"  component={MainPage}/>
+                </Switch>
+            </Router>
+        </div>
+    );
+};
 
-export default App;
+export { App }
