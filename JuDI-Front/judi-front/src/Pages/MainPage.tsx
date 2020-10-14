@@ -7,9 +7,7 @@ import {RouteComponentProps, withRouter} from "react-router";
 
 export const menuSectionRef: RefObject<HTMLDivElement> = createRef<HTMLDivElement>()
 export const aboutUsRef: RefObject<HTMLDivElement> = createRef<HTMLDivElement>()
-export const contactUsRef: RefObject<HTMLDivElement> = createRef<HTMLDivElement>()
-export const signinRef: RefObject<HTMLDivElement> = createRef<HTMLDivElement>()
-export const signupRef: RefObject<HTMLDivElement> = createRef<HTMLDivElement>()
+export const aboutSiteRef: RefObject<HTMLDivElement> = createRef<HTMLDivElement>()
 
 
 class MainPage extends React.Component<RouteComponentProps> {
@@ -22,11 +20,18 @@ class MainPage extends React.Component<RouteComponentProps> {
     render(): React.ReactElement<any, string | React.JSXElementConstructor<any>> | string | number | {} | React.ReactNodeArray | React.ReactPortal | boolean | null | undefined {
         return(
             <div>
-                <Header />
+                <Header aboutUsRef={aboutUsRef}
+                        aboutSiteRef={aboutSiteRef}
+                        menuSectionRef={menuSectionRef}/>
                 {/** END nav  **/}
 
+                <div className="main-page-body">
+
+                </div>
+
                 {/** footer **/}
-                <Footer/>
+                <Footer aboutUsRef={aboutUsRef}
+                        aboutSiteRef={aboutSiteRef}/>
 
 
                 {/** loader **/}

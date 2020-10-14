@@ -1,17 +1,34 @@
-
 import * as React from "react";
+import AboutSite from "./AboutSite"
+import AboutUs from "./AboutUs"
+import {RefObject} from "react";
+import { aboutUsRef, aboutSiteRef } from "../Pages/MainPage";
 
-const Footer: React.FC = () => {
-    return(
-        <div>
-            <p>{/** Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. **/}
-                Copyright &copy;
-                All rights reserved | Developed by parsa heidary moghadam
-                {/** Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. **/}
-            </p>
-        </div>
-    )
-};
+
+interface FooterProps {
+    aboutUsRef: RefObject<HTMLDivElement>
+    aboutSiteRef: RefObject<HTMLDivElement>
+}
+
+class Footer extends React.Component<FooterProps> 
+{
+    render(): React.ReactElement<any, string | React.JSXElementConstructor<any>> | string | number | {} | React.ReactNodeArray | React.ReactPortal | boolean | null | undefined {
+        return(
+            <div>
+                <AboutSite aboutSiteRef={this.props.aboutSiteRef}/>
+                <AboutUs aboutUsRef={this.props.aboutUsRef}/>
+            </div>
+        );
+    }
+}
+// const Footer: React.FC = () => {
+//     return(
+//         <div>
+//             <AboutSite />
+//             <AboutUs />
+//         </div>
+//     )
+// };
 
 
 
